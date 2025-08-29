@@ -20,10 +20,13 @@ find_package(OpenSSL REQUIRED)
 # Collect project sources
 file(GLOB_RECURSE SRC_SOURCES "src/*.cpp")
 
+# Collect all unit test sources
+file(GLOB_RECURSE UNIT_TEST_SOURCES "tests/unit_tests/*.cpp")
+
 # Create test executable
 add_executable(tests
-    tests/unit_tests/test_encrypt_decrypt.cpp
-    ${SRC_SOURCES}   # Include project sources
+    ${UNIT_TEST_SOURCES}  # all unit test cpp files
+    ${SRC_SOURCES}        # include project sources
 )
 
 # Include src headers
