@@ -1,3 +1,6 @@
+#ifndef CRYPTO_HPP
+#define CRYPTO_HPP
+
 namespace mimic {
 
 	struct encrypted_packet {
@@ -10,4 +13,6 @@ namespace mimic {
 
 	std::vector<uint8_t> decrypt( const encrypted_packet& packet, const std::span<const uint8_t> key );
 
-}
+} // namespace mimic
+
+#endif // CRYPTO_HPP
